@@ -1,0 +1,26 @@
+.label {
+    -fx-font-family: "Helvetica", sans-serif;
+}
+
+.label-bold {
+    -fx-font-weight: bold;
+}
+
+.button {
+    -fx-font-family: "Helvetica", sans-serif;
+}
+
+.button-teal {
+    -fx-padding: 0.7em 0.57em;
+    -fx-font-size: 15px;
+    -fx-background-color: #00BFA5;
+    -fx-pref-width: 100;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0, 0, 3);
+    -fx-font-weight: bold;
+}
+
+.button-teal:hover {
+    -fx-background-color: #1DE9B6;
+}
