@@ -2,12 +2,17 @@
     -fx-font-family: "Helvetica", sans-serif;
 }
 
-.label-bold {
+.label-title {
+    -fx-font-size: 50px;
     -fx-font-weight: bold;
 }
 
 .button {
     -fx-font-family: "Helvetica", sans-serif;
+}
+
+.text-field{
+    -fx-focus-traversable: false;
 }
 
 .button-teal {
@@ -19,6 +24,10 @@
     -fx-background-radius: 5px;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0, 0, 3);
     -fx-font-weight: bold;
+}
+
+.button-clear {
+    -fx-background-color: transparent;
 }
 
 .button-teal:hover {
