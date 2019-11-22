@@ -35,16 +35,18 @@
         <VBox alignment="CENTER" maxWidth="500.0" minWidth="500.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0"
               BorderPane.alignment="CENTER">
             <children>
-                <TextField editable="false" maxWidth="250.0" minWidth="250.0" prefWidth="250.0"
+                <TextField fx:id="asuriteidField" maxWidth="250.0" minWidth="250.0" prefWidth="250.0"
                            promptText="ASURITE User ID" styleClass="text-field"/>
-                <PasswordField maxWidth="250.0" minWidth="250.0" prefWidth="250.0" promptText="Password"
-                               styleClass="text-field"/>
-                <Button fx:id="loginButton" mnemonicParsing="false" onAction="#buttonToDashboard" text="Login">
+                <PasswordField fx:id="passwordField" maxWidth="250.0" minWidth="250.0" prefWidth="250.0"
+                               promptText="Password" styleClass="text-field"/>
+                <Button fx:id="loginButton" mnemonicParsing="false" onAction="#validateLogin" text="Login">
                     <styleClass>
                         <String fx:value="button"/>
                         <String fx:value="button-teal"/>
                     </styleClass>
                 </Button>
+                <Label fx:id="errorMessageLabel" text="Please enter all the fields to signup!" textFill="#f44336"
+                       visible="false"/>
             </children>
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>

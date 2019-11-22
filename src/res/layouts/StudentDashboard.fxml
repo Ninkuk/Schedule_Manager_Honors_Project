@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1000.0" stylesheets="@../css/Material_Style_CSS.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.StudentDashboardController">
+   <left>
+      <VBox alignment="TOP_CENTER" maxHeight="650.0" maxWidth="150.0" minHeight="650.0" minWidth="150.0" prefHeight="650.0" prefWidth="150.0" styleClass="side-panel" stylesheets="@../css/Material_Style_CSS.css" BorderPane.alignment="CENTER">
+         <children>
+            <VBox style="-fx-background-color: #263238;">
+               <children>
+                  <Label text="Welcome Back," textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label text="Ninad" textFill="#00e676">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Label>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+            <Button mnemonicParsing="false" prefWidth="150.0" text="Class Search">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <styleClass>
+                  <String fx:value="button-menu" />
+                  <String fx:value="button-menu-active" />
+               </styleClass>
+            </Button>
+            <Button layoutX="10.0" layoutY="137.0" mnemonicParsing="false" prefWidth="150.0" text="View Schedule">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <styleClass>
+                  <String fx:value="button-menu" />
+                  <String fx:value="button-clear" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="10.0" layoutY="174.0" mnemonicParsing="false" prefWidth="150.0" text="Drop Class">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <styleClass>
+                  <String fx:value="button-menu" />
+                  <String fx:value="button-clear" />
+               </styleClass>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" styleClass="button-red" text="Sign Out" textAlignment="CENTER" translateY="390.0">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>

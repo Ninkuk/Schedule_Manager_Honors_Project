@@ -9,9 +9,10 @@
 
 .button {
     -fx-font-family: "Helvetica", sans-serif;
+    -fx-cursor: hand;
 }
 
-.text-field{
+.text-field {
     -fx-focus-traversable: false;
 }
 
@@ -32,4 +33,27 @@
 
 .button-teal:hover {
     -fx-background-color: #1DE9B6;
+}
+
+.button-red {
+    /*-fx-padding: 0.7em 0.57em;*/
+    -fx-font-size: 12px;
+    -fx-background-color: #F44336;
+    -fx-pref-width: 100;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 5px;
+    -fx-font-weight: bold;
+}
+
+.button-menu {
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 0px;
+}
+
+.button-menu-active {
+    -fx-background-color: #37474F;
+}
+
+.side-panel {
+    -fx-background-color: #455A64;
 }
