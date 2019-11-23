@@ -54,6 +54,10 @@
     -fx-background-color: #37474F;
 }
 
+.button-menu:hover {
+    -fx-background-color: #37474F;
+}
+
 .side-panel {
     -fx-background-color: #455A64;
 }
