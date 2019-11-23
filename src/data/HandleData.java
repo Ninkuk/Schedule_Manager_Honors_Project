@@ -6,15 +6,16 @@ import java.util.ArrayList;
 public class HandleData {
 
     public static ArrayList<Student> studentsList;
+    public static ArrayList<Course> coursesList;
     public static Student currentStudent;
-    public static String fileUrl = "src/data/students.data";
+    public static String fileUrl = "src/data/";
 
-    public static void getList() {
+    public static void getStudentList() {
         FileInputStream fileInputStream = null;
         ObjectInputStream objectInputStream = null;
 
         try {
-            fileInputStream = new FileInputStream(fileUrl);
+            fileInputStream = new FileInputStream(fileUrl + "students.data");
             objectInputStream = new ObjectInputStream(fileInputStream);
 
             //Deserialize Object
@@ -40,7 +41,38 @@ public class HandleData {
         }
     }
 
-    public static void addStudent(Student student) {
+    public static void getCourseList() {
+        FileInputStream fileInputStream = null;
+        ObjectInputStream objectInputStream = null;
+
+        try {
+            fileInputStream = new FileInputStream(fileUrl + "courses.data");
+            objectInputStream = new ObjectInputStream(fileInputStream);
+
+            //Deserialize Object
+            coursesList = (ArrayList<Course>) objectInputStream.readObject();
+
+        } catch (FileNotFoundException e) {
+            System.err.println("FileNotFoundException");
+        } catch (IOException e) {
+            System.err.println("IOException");
+        } catch (ClassNotFoundException e) {
+            System.err.println("ClassNotFoundException");
+        } finally {
+            try {
+                if (objectInputStream != null) {
+                    objectInputStream.close();
+                    for (Course course : coursesList) {
+                        System.out.println(course.getTitle());
+                    }
+                }
+            } catch (IOException e) {
+                System.err.println("IOException");
+            }
+        }
+    }
+
+    public static void addStudentToList(Student student) {
         FileOutputStream fileOutputStream = null;
         ObjectOutputStream objectOutputStream = null;
 
@@ -59,7 +91,11 @@ public class HandleData {
             System.out.println("IOException");
         } finally {
             try {
-                if (objectOutputStream != null) objectOutputStream.close();
+                if (objectOutputStream != null) {
+                    objectOutputStream.close();
+                    setCurrentAccount(student);
+                }
+
             } catch (IOException exc) {
                 System.out.println("IOException");
             }
@@ -70,12 +106,12 @@ public class HandleData {
 
     }
 
-    public static Student getAccount() {
+    public static Student getCurrentAccount() {
         return currentStudent;
     }
 
-    public static void setAccount(Student student) {
-
+    public static void setCurrentAccount(Student student) {
+        currentStudent = student;
     }
 
     public static boolean doesAccountExist(String asuriteId) {
@@ -86,14 +122,5 @@ public class HandleData {
         }
 
         return true;
-    }
-
-    public static Student getStudent(String asuriteId) {
-        for (Student student : studentsList) {
-            if (student.getAsuriteId().equalsIgnoreCase(asuriteId)) {
-                return student;
-            }
-        }
-        return null;
     }
 }
