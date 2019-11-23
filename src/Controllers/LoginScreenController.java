@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class LoginScreen {
+public class LoginScreenController {
     public Button backButton;
     public Button loginButton;
     public TextField asuriteidField;
@@ -34,6 +34,7 @@ public class LoginScreen {
             ArrayList<Student> studentsList = HandleData.studentsList;
             for (Student student : studentsList) {
                 if (student.getAsuriteId().equalsIgnoreCase(asuriteId) && student.getPassword().equals(password)) {
+                    HandleData.setCurrentAccount(student);
                     proceedToDashboard(event);
                 }
             }
