@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="650.0" maxWidth="850.0" minHeight="650.0" minWidth="850.0" prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ClassSearchController">
+    <children>
+        <TableView fx:id="classSearchTable" maxHeight="650.0" minHeight="650.0" prefHeight="650.0" tableMenuButtonVisible="true">
+            <columns>
+                <TableColumn fx:id="title" maxWidth="141.66" minWidth="141.66" prefWidth="141.66" text="Title" />
+                <TableColumn fx:id="classCode" maxWidth="141.66" minWidth="141.66" prefWidth="141.66" text="Class Code" />
+                <TableColumn fx:id="days" maxWidth="141.66" minWidth="141.66" prefWidth="141.66" text="Days" />
+                <TableColumn fx:id="startTime" maxWidth="141.66" minWidth="141.66" prefWidth="141.66" text="Start" />
+                <TableColumn fx:id="endTime" maxWidth="141.66" minWidth="141.66" prefWidth="141.66" text="End" />
+                <TableColumn fx:id="units" maxWidth="141.66" minWidth="141.66" prefWidth="141.66" text="Units" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>
