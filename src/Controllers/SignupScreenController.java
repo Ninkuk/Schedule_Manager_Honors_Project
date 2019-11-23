@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SignupScreen implements Initializable {
+public class SignupScreenController implements Initializable {
     public Button backButton;
     public Button signupButton;
     public ComboBox<String> gradeLevelCB;
@@ -50,8 +50,7 @@ public class SignupScreen implements Initializable {
                 errorMessageLabel.setVisible(false);
 
                 Student student = new Student(asuriteId, fullName, password, gradeLevel);
-                HandleData.addStudent(student);
-
+                HandleData.addStudentToList(student);
                 proceedToDashboard(event);
             } else {
                 errorMessageLabel.setText("Account already exists!");
