@@ -13,16 +13,13 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1000.0"
             stylesheets="@../css/Material_Style_CSS.css" xmlns="http://javafx.com/javafx/10.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginScreen">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginScreenController">
     <left>
         <Label alignment="CENTER" maxWidth="500.0" minWidth="500.0" prefWidth="500.0" styleClass="label-title"
                text="LOGIN" textFill="#444b54" BorderPane.alignment="CENTER">
             <font>
                 <Font size="43.0"/>
             </font>
-            <BorderPane.margin>
-                <Insets/>
-            </BorderPane.margin>
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
             </padding>
@@ -38,10 +35,9 @@
                 <TextField fx:id="asuriteidField" maxWidth="250.0" minWidth="250.0" prefWidth="250.0"
                            promptText="ASURITE User ID" styleClass="text-field"/>
                 <PasswordField fx:id="passwordField" maxWidth="250.0" minWidth="250.0" prefWidth="250.0"
-                               promptText="Password" styleClass="text-field"/>
+                               promptText="Password*" styleClass="text-field"/>
                 <Button fx:id="loginButton" mnemonicParsing="false" onAction="#validateLogin" text="Login">
                     <styleClass>
-                        <String fx:value="button"/>
                         <String fx:value="button-teal"/>
                     </styleClass>
                 </Button>
@@ -54,7 +50,7 @@
         </VBox>
     </right>
     <bottom>
-        <Label alignment="BOTTOM_RIGHT" text="Please DO NOT Enter Your Actual ASURITE Password" textFill="#1f1f1f80"
+        <Label alignment="BOTTOM_RIGHT" text="*Please DO NOT Enter Your Actual ASURITE Password" textFill="#1f1f1f80"
                BorderPane.alignment="BOTTOM_RIGHT">
             <padding>
                 <Insets bottom="10.0" right="10.0"/>
@@ -64,9 +60,6 @@
     <top>
         <Button fx:id="backButton" cancelButton="true" mnemonicParsing="false" onAction="#backToStartScreen"
                 styleClass="button-clear" text="&lt; BACK" textFill="#1f1f1f80" BorderPane.alignment="TOP_LEFT">
-            <BorderPane.margin>
-                <Insets/>
-            </BorderPane.margin>
             <padding>
                 <Insets left="20.0" top="20.0"/>
             </padding>
