@@ -26,16 +26,8 @@ public class Student implements Serializable {
         return asuriteId;
     }
 
-    public void setAsuriteId(String asuriteId) {
-        this.asuriteId = asuriteId;
-    }
-
     public String getFullName() {
         return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
     }
 
     public String getPassword() {
