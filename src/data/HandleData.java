@@ -10,7 +10,7 @@ public class HandleData {
     public static Student currentStudent;
     public static String fileUrl = "src/data/";
 
-    public static void getStudentList() {
+    public static void getStudentListFromFile() {
         FileInputStream fileInputStream = null;
         ObjectInputStream objectInputStream = null;
 
@@ -22,18 +22,16 @@ public class HandleData {
             studentsList = (ArrayList<Student>) objectInputStream.readObject();
 
         } catch (FileNotFoundException e) {
-            System.err.println("FileNotFoundException");
+            System.err.println("FileNotFoundException Students.data");
         } catch (IOException e) {
-            System.err.println("IOException");
+            System.err.println("IOException students");
+            e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            System.err.println("ClassNotFoundException");
+            System.err.println("ClassNotFoundException Students");
         } finally {
             try {
                 if (objectInputStream != null) {
                     objectInputStream.close();
-                    for (Student student : studentsList) {
-                        System.out.println(student.getAsuriteId());
-                    }
                 }
             } catch (IOException e) {
                 System.err.println("IOException");
@@ -41,7 +39,7 @@ public class HandleData {
         }
     }
 
-    public static void getCourseList() {
+    public static void getCourseListFromFile() {
         FileInputStream fileInputStream = null;
         ObjectInputStream objectInputStream = null;
 
@@ -53,18 +51,15 @@ public class HandleData {
             coursesList = (ArrayList<Course>) objectInputStream.readObject();
 
         } catch (FileNotFoundException e) {
-            System.err.println("FileNotFoundException");
+            System.err.println("FileNotFoundException Courses.data");
         } catch (IOException e) {
             System.err.println("IOException");
         } catch (ClassNotFoundException e) {
-            System.err.println("ClassNotFoundException");
+            System.err.println("ClassNotFoundException Course");
         } finally {
             try {
                 if (objectInputStream != null) {
                     objectInputStream.close();
-                    for (Course course : coursesList) {
-                        System.out.println(course.getTitle());
-                    }
                 }
             } catch (IOException e) {
                 System.err.println("IOException");
@@ -77,7 +72,7 @@ public class HandleData {
         ObjectOutputStream objectOutputStream = null;
 
         try {
-            fileOutputStream = new FileOutputStream(fileUrl);
+            fileOutputStream = new FileOutputStream(fileUrl + "students.data");
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
             studentsList.add(student);
@@ -120,7 +115,6 @@ public class HandleData {
                 return false;
             }
         }
-
         return true;
     }
 }
