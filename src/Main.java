@@ -17,8 +17,8 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        HandleData.getStudentList();
-        HandleData.getCourseList();
+        HandleData.getStudentListFromFile();
+        HandleData.getCourseListFromFile();
         launch(args);
     }
 }
