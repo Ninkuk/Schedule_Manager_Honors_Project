@@ -1,16 +1,17 @@
 package data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Course implements Serializable {
     private String title;
     private String classCode;
-    private int days;
+    private ArrayList<String> days;
     private String start;
     private String end;
     private int units;
 
-    public Course(String title, String classCode, int days, String start, String end, int units) {
+    public Course(String title, String classCode, ArrayList<String> days, String start, String end, int units) {
         this.title = title;
         this.classCode = classCode;
         this.days = days;
@@ -27,8 +28,12 @@ public class Course implements Serializable {
         return classCode;
     }
 
-    public int getDays() {
-        return days;
+    public String getDays() {
+        String daysList = "";
+        for (String day : days) {
+            daysList += day + " ";
+        }
+        return daysList;
     }
 
     public String getStart() {
