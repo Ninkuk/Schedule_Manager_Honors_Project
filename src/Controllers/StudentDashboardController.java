@@ -14,6 +14,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -21,16 +22,32 @@ public class StudentDashboardController implements Initializable {
 
     public BorderPane dashboardBP;
     public Button classSearchButton;
+    public Button myScheduleButton;
     public Button signoutButton;
     public Label userName;
 
-    public int viewState = 1;
+    public int viewState = 0;
 
     public void switchToClassSearch() throws Exception {
-        VBox homeView = FXMLLoader.load(getClass().getResource("../res/layouts/ClassSearchView.fxml"));
-        dashboardBP.setCenter(homeView);
+        VBox classSearchView = FXMLLoader.load(getClass().getResource("../res/layouts/ClassSearchView.fxml"));
+        dashboardBP.setCenter(classSearchView);
         dashboardBP.setAlignment(dashboardBP.getCenter(), Pos.TOP_CENTER);
-        viewState = 1;
+
+        classSearchButton.getStyleClass().add("button-menu-active");
+
+        myScheduleButton.getStyleClass().add("button-clear");
+        myScheduleButton.getStyleClass().remove("button-menu-active");
+    }
+
+    public void switchToMySchedule() throws Exception {
+        VBox myScheduleView = FXMLLoader.load(getClass().getResource("../res/layouts/MyScheduleView.fxml"));
+        dashboardBP.setCenter(myScheduleView);
+        dashboardBP.setAlignment(dashboardBP.getCenter(), Pos.TOP_CENTER);
+
+        myScheduleButton.getStyleClass().add("button-menu-active");
+
+        classSearchButton.getStyleClass().add("button-clear");
+        classSearchButton.getStyleClass().remove("button-menu-active");
     }
 
     public void signoutToStartScreen(ActionEvent event) throws Exception {
