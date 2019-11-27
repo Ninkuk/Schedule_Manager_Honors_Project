@@ -45,7 +45,7 @@ public class SignupScreenController implements Initializable {
         } else {
             errorMessageLabel.setText("");
             errorMessageLabel.setVisible(false);
-            if (HandleData.doesAccountExist(asuriteId)) {
+            if (!HandleData.doesAccountExist(asuriteId)) {
                 errorMessageLabel.setText("");
                 errorMessageLabel.setVisible(false);
 
