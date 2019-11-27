@@ -24,7 +24,7 @@
                 <TableColumn fx:id="unitsColumn" maxWidth="141.66" minWidth="141.66" prefWidth="141.66" text="Units"/>
             </columns>
         </TableView>
-        <Button styleClass="button-teal" text="Add Class"/>
-        <Label textFill="#f44336" visible="false"/>
+        <Button fx:id="addCourseButton" onAction="#addCourseToStudent" styleClass="button-teal" text="Add Course"/>
+        <Label fx:id="errorMessageLabel" textFill="#f44336" visible="false"/>
     </children>
 </VBox>
