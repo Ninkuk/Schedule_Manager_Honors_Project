@@ -14,6 +14,14 @@
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="650.0" minWidth="1000.0"
             stylesheets="@../css/Material_Style_CSS.css" xmlns="http://javafx.com/javafx/10.0.1"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginScreenController">
+    <top>
+        <Button fx:id="backButton" onAction="#backToStartScreen" styleClass="button-clear" text="&lt; BACK"
+                textFill="#1f1f1f80" BorderPane.alignment="TOP_LEFT">
+            <padding>
+                <Insets left="20.0" top="20.0"/>
+            </padding>
+        </Button>
+    </top>
     <left>
         <Label alignment="CENTER" maxWidth="500.0" minWidth="500.0" prefWidth="500.0" styleClass="label-title"
                text="LOGIN" textFill="#444b54" BorderPane.alignment="CENTER">
@@ -57,12 +65,4 @@
             </padding>
         </Label>
     </bottom>
-    <top>
-        <Button fx:id="backButton" cancelButton="true" mnemonicParsing="false" onAction="#backToStartScreen"
-                styleClass="button-clear" text="&lt; BACK" textFill="#1f1f1f80" BorderPane.alignment="TOP_LEFT">
-            <padding>
-                <Insets left="20.0" top="20.0"/>
-            </padding>
-        </Button>
-    </top>
 </BorderPane>
