@@ -76,6 +76,7 @@ public class HandleData {
                 addCourseToList(course);
             }
         }
+        System.out.println("done");
     }
 
     public static void addStudentToList(Student student) {
