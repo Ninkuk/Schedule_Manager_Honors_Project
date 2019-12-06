@@ -72,12 +72,13 @@ public class Course implements Serializable {
         return classCode;
     }
 
-    public String getDays() {
-        String daysList = "";
-        for (String day : days) {
-            daysList += day + " ";
-        }
-        return daysList;
+    public ArrayList<String> getDays() {
+//        String daysList = "";
+//        for (String day : days) {
+//            daysList += day + " ";
+//        }
+//        return daysList;
+        return this.days;
     }
 
     public LocalTime getStart() {
